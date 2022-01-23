@@ -16,13 +16,13 @@ const App = () => {
         justifyContent="center"
         style={{ height: "100vh" }}
       >
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={3} order={{ md: 1, xs: 2 }}>
           <Details title="Income" />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={4} order={{ md: 2, xs: 1 }}>
           <Main />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} md={3} order={{ md: 3, xs: 3 }}>
           <Details title="Expense" />
         </Grid>
       </Grid>

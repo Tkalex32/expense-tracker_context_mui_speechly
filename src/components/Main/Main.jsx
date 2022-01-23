@@ -6,10 +6,14 @@ import {
   Divider,
   Grid,
 } from "@material-ui/core";
-import { CallMissedSharp } from "@material-ui/icons";
+import Form from "./Form/Form";
+import List from "./List/List";
+import { useContext } from "react";
+import { ExpenseTrackerContext } from "../../context/context";
 import useStyles from "./styles";
 
 const Main = () => {
+  const { balance } = useContext(ExpenseTrackerContext);
   const classes = useStyles();
 
   return (
@@ -17,7 +21,7 @@ const Main = () => {
       <CardHeader title="Expense Tracker" subheader="with speechly" />
       <CardContent>
         <Typography align="center" variant="h5">
-          Total Balance: $1000
+          Total Balance: ${balance}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -27,12 +31,12 @@ const Main = () => {
           Try saying: Add income for $100 in category salary for monday
         </Typography>
         <Divider />
-        {/* form */}
+        <Form />
       </CardContent>
       <CardContent className={classes.cardcontent}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {/* <List /> */}
+            <List />
           </Grid>
         </Grid>
       </CardContent>
